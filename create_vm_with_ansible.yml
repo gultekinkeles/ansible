@@ -13,6 +13,6 @@
       name: RHEL7VMtest
       template: rhel-7-template
       datacenter: Konsalt-MESA
-      folder: /Konsalt-MESA/RedHat/RHEL
+      folder: /RedHat/RHEL
       state: poweredon
       wait_for_ip_address: no
