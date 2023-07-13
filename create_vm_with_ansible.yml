@@ -1,6 +1,12 @@
 ---
 - name: create vm demo
   hosts: localhost
+  vars_prompt:
+    - name: vcenter_username
+      prompt: What is vcenter username?
+      private: false
+    - name: vcenter_password
+      prompt: What is your vcenter password?
   become: false
   gather_facts: false
   collections:
