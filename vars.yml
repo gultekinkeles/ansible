@@ -2,10 +2,8 @@
 vcenter_hostname: "s001vcsa1.konsalt.info"
 vcenter_datacenter: "vmwaredatacenter"
 vcenter_validate_certs: false
-vcenter_username: "gultekin.keles@konsalt.info"
-vcenter_password: "MySecretPassword123"
 vm_name: "myvm"
-vm_guestid: "centos64Guest"
+vm_guestid: "redhat8Guest"
 vm_disk_gb: 10
 vm_disk_type: "thin"
 vm_disk_datastore: "Datastore-1"
