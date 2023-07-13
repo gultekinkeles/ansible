@@ -7,7 +7,7 @@
   - name: Clone the template
     vmware_guest:
       hostname: 192.168.1.3
-      username: "konsalt\gultekin.keles"
+      username: "gultekin.keles"
       password: "Fb1907arda1*"
       validate_certs: False
       name: RHEL7VMtest
