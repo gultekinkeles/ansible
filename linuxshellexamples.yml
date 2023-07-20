@@ -3,7 +3,6 @@
     hosts: all
     tasks:
     - name: Display the file
-
       shell: |
         ls -la /var > /tmp/displayvardir.txt
         cat /tmp/displayvardir.txt
@@ -12,6 +11,4 @@
         uptime & uname -a
         echo "Test" > /dev/null
       register: deneme
-      
-
     - debug: msg="{{deneme.stdout_lines}}"
