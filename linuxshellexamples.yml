@@ -5,5 +5,11 @@
     - name: Display the file
       shell: ls -la /var > /tmp/displayvardir.txt; date
       register: displaylist
+      shell: |
+        whoami
+        uptime & uname -a
+        echo "Test" > /dev/null
+      register: deneme
       
     - debug: msg="{{displaylist.stdout_lines}}"
+    - debug: msg="{{deneme.stdout_lines}}"
