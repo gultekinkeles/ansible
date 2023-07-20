@@ -6,6 +6,7 @@
 
       shell: |
         ls -la /var > /tmp/displayvardir.txt
+        cat /tmp/displayvardir.txt
         date
         whoami
         uptime & uname -a
