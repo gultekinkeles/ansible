@@ -1,6 +1,6 @@
 ---
   - name: Shell Examples
-    hosts: testservers
+    hosts: all
     tasks:
     - name: Display the file
       shell: "echo $HOSTNAME >> /tmp/yumlist.txt; yum list installed;echo "-----------------------------------------" >> /tmp/yumlist.txt"
