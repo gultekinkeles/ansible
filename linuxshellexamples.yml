@@ -3,7 +3,7 @@
     hosts: all
     tasks:
     - name: Display the file
-      shell: "echo $HOSTNAME >> /tmp/yumlist.txt; yum list installed;echo "-----------------------------------------" >> /tmp/yumlist.txt"
+      shell: echo $HOSTNAME
       register: displaylist
       
     - debug: msg="{{displaylist.stdout_lines}}"
