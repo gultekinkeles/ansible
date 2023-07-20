@@ -12,5 +12,5 @@
         echo "Test" > /dev/null
       register: deneme
       
-    - debug: msg="{{displaylist.stdout_lines}}"
+
     - debug: msg="{{deneme.stdout_lines}}"
