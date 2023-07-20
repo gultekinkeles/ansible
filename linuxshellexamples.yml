@@ -3,7 +3,7 @@
     hosts: all
     tasks:
     - name: Display the file
-      shell: ls -la /var
+      shell: ls -la /var > /tmp/displayvardir.txt; cat /tmp/displayvardir.txt
       register: displaylist
       
     - debug: msg="{{displaylist.stdout_lines}}"
