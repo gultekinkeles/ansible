@@ -3,9 +3,10 @@
     hosts: all
     tasks:
     - name: Display the file
-      shell: ls -la /var > /tmp/displayvardir.txt; date
-      register: displaylist
+
       shell: |
+        ls -la /var > /tmp/displayvardir.txt
+        date
         whoami
         uptime & uname -a
         echo "Test" > /dev/null
