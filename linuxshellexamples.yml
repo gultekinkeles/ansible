@@ -3,7 +3,7 @@
     hosts: all
     tasks:
     - name: Display the file
-      shell: echo $HOSTNAME
+      shell: ls -la /var
       register: displaylist
       
     - debug: msg="{{displaylist.stdout_lines}}"
