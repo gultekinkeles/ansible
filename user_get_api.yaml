@@ -1,4 +1,7 @@
 ---
+- name: Shell Examples
+    hosts: all
+    tasks:
 - name: Running API
   uri:
     url: https://api.github.com/gultekinkeles
