@@ -5,8 +5,9 @@
     - name: Display the file
       shell: |
         echo "-----------------------------------------" >> /tmp/yumlist.txt
-        echo $HOSTNAME >> /tmp/yumlist.txt 
-        yum list installed | awk '{ print $1 }' > /tmp/yumlist.tmp
+        echo $HOSTNAME >> /tmp/yumlist.txt
+        echo "-----------------------------------------" >> /tmp/yumlist.txt
+        yum list installed | awk '{ print $1 }' >> /tmp/yumlist.txt
         echo "-----------------------------------------" >> /tmp/yumlist.txt 
       register: deneme
     - debug: msg="{{deneme.stdout_lines}}"
