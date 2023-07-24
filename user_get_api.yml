@@ -5,6 +5,5 @@
       method: GET
       return_content: yes
     register: user_list
-
   - name: App Details
     debug: var=user_list
