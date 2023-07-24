@@ -1,10 +1,10 @@
 ---
-- name: Create a VM from a template
+- name: List installed packages on host
   hosts: all
   connection: local
   gather_facts: no
   tasks:
   - name: List ansible packages and register result to print with debug later
   ansible.builtin.yum:
-    list: ansible
+    list: "installed"
   register: result
