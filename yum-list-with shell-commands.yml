@@ -4,9 +4,9 @@
     tasks:
     - name: Display the file
       shell: |
-        echo "-----------------------------------------" >> /tmp/yumlist.txt ;
-        echo $HOSTNAME >> /tmp/yumlist.txt ; yum list installed > /tmp/yumlist.tmp ;
-        awk '{ print $1 }' /tmp/yumlist.tmp >> /tmp/yumlist.txt ; 
+        echo "-----------------------------------------" >> /tmp/yumlist.txt
+        echo $HOSTNAME >> /tmp/yumlist.txt ; yum list installed > /tmp/yumlist.tmp
+        awk '{ print $1 }' /tmp/yumlist.tmp >> /tmp/yumlist.txt
         echo "-----------------------------------------" >> /tmp/yumlist.txt ; mv /tmp/yumlist.txt /
       register: deneme
     - debug: msg="{{deneme.stdout_lines}}"
