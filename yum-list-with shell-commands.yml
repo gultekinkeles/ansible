@@ -9,7 +9,7 @@
         echo "-----------------------------------------" >> /tmp/yumlist.txt
         yum list installed | awk '{ print $1 }' >> /tmp/yumlist.txt
         echo "-----------------------------------------" >> /tmp/yumlist.txt
-        cp /tmp/yumlist.txt /"$HOSTNAME.txt"
+        cp /tmp/yumlist.txt /tmp/"$HOSTNAME.txt"
         cat /tmp/yumlist.txt
       register: deneme
     - debug: msg="{{deneme.stdout_lines}}"
