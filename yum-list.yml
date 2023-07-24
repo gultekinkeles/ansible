@@ -5,6 +5,6 @@
   gather_facts: no
   tasks:
   - name: List ansible packages and register result to print with debug later
-  ansible.builtin.yum:
-    list: "installed"
-  register: result
+    ansible.builtin.yum:
+      list: "installed"
+    register: result
