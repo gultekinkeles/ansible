@@ -7,3 +7,4 @@
 
 - name: App Details
   debug: var=user_list
+de
