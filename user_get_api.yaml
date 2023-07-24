@@ -1,12 +1,12 @@
 ---
 - name: Shell Examples
   hosts: localhost
-    tasks:
-      - name: Running API
-        uri:
-          url: https://api.github.com/gultekinkeles
-          method: GET
-          return_content: yes
-        register: user_list
-      - name: App Details
-        debug: var=user_list
+  tasks:
+    - name: Running API
+      uri:
+        url: https://api.github.com/gultekinkeles
+        method: GET
+        return_content: yes
+      register: user_list
+    - name: App Details
+      debug: var=user_list
