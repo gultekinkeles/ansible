@@ -1,4 +1,14 @@
-- name: List ansible packages and register result to print with debug later
+---
+- name: Create a VM from a template
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: List ansible packages and register result to print with debug later
   ansible.builtin.yum:
     list: ansible
   register: result
+    - name: List ansible packages and register result to print with debug later
+      ansible.builtin.yum:
+        list: ansible
+      register: result
