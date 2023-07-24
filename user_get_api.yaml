@@ -1,6 +1,6 @@
 ---
 - name: Shell Examples
-    hosts: all
+    hosts: localhost
     tasks:
       - name: Running API
         uri:
