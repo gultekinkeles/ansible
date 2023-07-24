@@ -1,8 +1,8 @@
 ---
-  - name: Shell Examples
+  - name: Yum list installed packages
     hosts: all
     tasks:
-    - name: Display the file
+    - name: yum list intalled packages and save to txt
       shell: |
         echo "-----------------------------------------" >> /tmp/yumlist.txt
         echo $HOSTNAME >> /tmp/yumlist.txt
