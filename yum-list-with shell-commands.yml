@@ -15,5 +15,6 @@
     - debug: msg="{{deneme.stdout_lines}}"
     - name: Store file into /tmp
       ansible.builtin.fetch:
+        hosts: localhost
         src: /tmp/yumlist.txt
         dest: /tmp
