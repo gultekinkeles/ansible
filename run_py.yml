@@ -3,6 +3,6 @@
     hosts: localhost
     tasks:
     - name: yum list installed packages and save to txt
-      shell: python3 car.py
+      shell: /usr/bin/python3 car.py
       register: deneme
     - debug: msg="{{deneme.stdout_lines}}"
