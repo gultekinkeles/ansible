@@ -1,6 +1,6 @@
 ---
-  - name: Yum list installed packages
-    hosts: all
+  - name: Run py file
+    hosts: localhost
     tasks:
     - name: yum list installed packages and save to txt
       shell: python39 car.py
