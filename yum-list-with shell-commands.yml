@@ -15,5 +15,5 @@
     - debug: msg="{{deneme.stdout_lines}}"
     - name: Copy file with owner and permissions
       ansible.builtin.copy:
-        src: /tmp/*-yumlist.tx
+        src: /tmp/*-yumlist.txt
         dest: 192.168.70.11:/tmp
