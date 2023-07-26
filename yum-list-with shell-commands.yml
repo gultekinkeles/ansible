@@ -2,7 +2,7 @@
   - name: Yum list installed packages
     hosts: all
     tasks:
-    - name: yum list intalled packages and save to txt
+    - name: yum list installed packages and save to txt
       shell: |
         echo "-----------------------------------------" >> /tmp/yumlist.txt
         echo $HOSTNAME >> /tmp/yumlist.txt
@@ -13,7 +13,7 @@
         cat /tmp/yumlist.txt
       register: deneme
     - debug: msg="{{deneme.stdout_lines}}"
-    - name: Store file into /tmp/fetched/host.example.com/tmp/somefile
+    - name: Store file into /tmp
       ansible.builtin.fetch:
         src: /tmp/yumlist.txt
         dest: /tmp
