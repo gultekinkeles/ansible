@@ -15,7 +15,6 @@
     - debug: msg="{{deneme.stdout_lines}}"
     
     - name: copy file from local to machine2
-      hosts: localhost
         copy: 
           src: /tmp/yumlist.txt
           dest: /tmp/yumlist.txt
