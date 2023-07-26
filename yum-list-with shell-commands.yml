@@ -13,8 +13,14 @@
         cat /tmp/yumlist.txt
       register: deneme
     - debug: msg="{{deneme.stdout_lines}}"
-    - name: Store file into /tmp
-      ansible.builtin.fetch:
-        hosts: localhost
-        src: /tmp/yumlist.txt
-        dest: /tmp
+    - hosts: localhost
+      tasks:
+      - name: copy file from local to machine2
+        copy: 
+          src: /tmp/yumlist.txt
+          dest: /tmp/yumlist.txt
+#    - name: Store file into /tmp
+#      ansible.builtin.fetch:
+#        hosts: localhost
+#        src: /tmp/yumlist.txt
+#        dest: /tmp
