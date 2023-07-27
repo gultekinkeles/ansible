@@ -4,5 +4,6 @@
     tasks:
     - name: yum list installed packages and save to txt
       shell: /usr/bin/python3 car.py
-      register: deneme
-    - debug: msg="{{deneme.stdout_lines}}"
+      register: output
+    - debug: var=output.stdout_lines
+    #- debug: msg="{{deneme.stdout_lines}}"
