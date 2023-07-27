@@ -4,5 +4,6 @@
     tasks:
     - name: run netsaler python script file 
       shell: /usr/bin/python3 netscalertest.py
-      register: netscaler
-    - debug: msg="{{netscaler.stdout_lines}}"
+      register: output
+    - debug: var=output.stdout_lines  
+    #- debug: msg="{{netscaler.stdout_lines}}"
