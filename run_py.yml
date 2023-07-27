@@ -6,4 +6,4 @@
       shell: /usr/bin/python3 car.py
       register: output
     - debug: var=output.stdout_lines
-    #- debug: msg="{{deneme.stdout_lines}}"
+    #- debug: msg="{{output.stdout_lines}}"
