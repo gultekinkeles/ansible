@@ -9,6 +9,6 @@ with open(r'backup.txt', 'r') as fp:
             alinacakKarakterSayisi = metin.find("-devno")
             yeniMetin = metin[0:alinacakKarakterSayisi - 1]
             print(yeniMetin)
-            f = open("backup1.txt", "a")
+            f = open("backup1.txt", "w")
             f.write(yeniMetin,)
             f.write("\n")
