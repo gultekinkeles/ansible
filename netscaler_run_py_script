@@ -1,0 +1,8 @@
+---
+  - name: Run Netcaler backup file process with python script file
+    hosts: localhost
+    tasks:
+    - name: run netsaler python script file 
+      shell: /usr/bin/python3 netscalertest.py
+      register: netscaler
+    - debug: msg="{{netscaler.stdout_lines}}"
