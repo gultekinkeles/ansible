@@ -18,6 +18,8 @@
         src: /tmp/*.yumlist.txt
         dest: /tmp
         flat: yes
+      register: fetch_output
+    - debug: msg="{{fetch_output.stdout_lines}}"
     
 #    - name: copy file from local to machine2
 #        copy: 
