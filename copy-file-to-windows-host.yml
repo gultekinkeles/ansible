@@ -1,6 +1,6 @@
 ---
   - name: win copy module demo
-    hosts: all
+    hosts: localhost
     become: false
     gather_facts: false
     vars:
