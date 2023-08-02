@@ -13,11 +13,16 @@
         cat /tmp/yumlist.txt
       register: deneme
     - debug: msg="{{deneme.stdout_lines}}"
+    - name: ansible copy file from remote to local.
+      fetch:
+        src: /tmp/*.yumlist.txt
+        dest: /tmp
+        flat: yes
     
-    - name: copy file from local to machine2
-        copy: 
-          src: /tmp/yumlist.txt
-          dest: /tmp/yumlist.txt
+#    - name: copy file from local to machine2
+#        copy: 
+#          src: /tmp/yumlist.txt
+#          dest: /tmp/yumlist.txt
 #    - name: Store file into /tmp
 #      ansible.builtin.fetch:
 #        hosts: localhost
