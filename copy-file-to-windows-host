@@ -1,0 +1,4 @@
+---
+  - name: Yum list installed packages
+    hosts: localhost
+    tasks:
