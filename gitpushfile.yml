@@ -12,7 +12,7 @@
         dest: /tmp/dgitclone
         clone: yes
         update: yes
-#        accept_hostkey: yes  # If using SSH
+        accept_hostkey: yes  # If using SSH
 
     - name: Copy JSON file to local clone directory
       ansible.builtin.copy:
