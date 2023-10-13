@@ -1,0 +1,35 @@
+---
+- name: Copy JSON file to GitLab
+  hosts: localhost
+  tasks:
+    - name: Create a file
+      ansible.builtin.file:
+        path: /tmp/deneme.json  # Specify the path and name of the file you want to create
+        state: touch  
+    - name: Clone GitLab repository
+      ansible.builtin.git:
+        repo: https://github.com/gultekinkeles/ansible.git
+        dest: /tmp/dgitclone
+        version: master
+#        accept_hostkey: yes  # If using SSH
+
+    - name: Copy JSON file to local clone directory
+      ansible.builtin.copy:
+        src: /tmp/deneme.json  # Replace with the path to your JSON file
+        dest: /tmp/dgitclone/
+
+    - name: Add changes to Git
+      ansible.builtin.git:
+        repo: /tmp/dgitclone
+        state: present
+        update: yes
+        force: yes
+        recursive: yes
+      become: yes  # If necessary
+
+    - name: Commit changes
+      ansible.builtin.git:
+        repo: /tmp/dgitclone
+        msg: "Add deneme.json"
+        push: yes
+      become: yes  # If necessary
