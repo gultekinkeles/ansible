@@ -1,0 +1,10 @@
+---
+- name: Modify JSON File
+  hosts: localhost
+  tasks:
+    - name: Replace JSON value
+      ansible.builtin.replace:
+        path: /path/to/your/example.json  # Replace with the actual path to your JSON file
+        regexp: '"key1": ".*"'
+        replace: '"key1": "new_value1"'
+      check_mode: no
