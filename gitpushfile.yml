@@ -11,7 +11,6 @@
         repo: 'https://gultekinkeles:Fb1907arda@github.com/gultekinkeles/ansible.git'
         dest: /tmp/dgitclone
         clone: yes
-        update: yes
         accept_hostkey: yes  # If using SSH
 
     - name: Copy JSON file to local clone directory
