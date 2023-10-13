@@ -8,10 +8,11 @@
         state: touch  
     - name: Clone GitLab repository
       ansible.builtin.git:
-        repo: 'https://github.com/gultekinkeles/ansible.git'
+        repo: 'https://gultekinkeles:Fb1907arda@github.com/gultekinkeles/ansible.git'
         dest: /tmp/dgitclone
-        version: master
-        accept_hostkey: yes  # If using SSH
+        clone: yes
+        update: yes
+#        accept_hostkey: yes  # If using SSH
 
     - name: Copy JSON file to local clone directory
       ansible.builtin.copy:
