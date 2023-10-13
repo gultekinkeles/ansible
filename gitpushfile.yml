@@ -7,10 +7,11 @@
         path: /tmp/deneme.json  # Specify the path and name of the file you want to create
         state: touch  
     - name: Clone GitLab repository
-      ansible.builtin.git:
-        repo: 'https://gultekinkeles:Fb1907arda@github.com/gultekinkeles/ansible.git'
+      git:
+        repo: https://gultekinkeles:Fb1907arda@github.com/gultekinkeles/ansible.git
         dest: /tmp/dgitclone
         clone: yes
+        update: yes
         accept_hostkey: yes  # If using SSH
 
     - name: Copy JSON file to local clone directory
@@ -19,7 +20,7 @@
         dest: /tmp/dgitclone/
 
     - name: Add changes to Git
-      ansible.builtin.git:
+      git:
         repo: /tmp/dgitclone
         state: present
         update: yes
@@ -28,7 +29,7 @@
       become: yes  # If necessary
 
     - name: Commit changes
-      ansible.builtin.git:
+      git:
         repo: /tmp/dgitclone
         msg: "Add deneme.json"
         push: yes
