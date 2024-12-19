@@ -5,6 +5,7 @@
   tasks:
   - name: Log in (obtain access token)
     redhat.openshift.openshift_auth:
+      host: api.ocpkobil.konsalt.info:6443
       username: kubeadmin
       password: "YkxGs-c23Mx-F99op-WtQB9"
       validate_certs: false
