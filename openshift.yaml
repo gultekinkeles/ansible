@@ -6,7 +6,7 @@
   - name: Log in (obtain access token)
     redhat.openshift.openshift_auth:
       username: kubeadmin
-      password: "sha256~cHO9UaLxfnlvT7_9DO94XQGaOyko-ufjxkTFgUf_nGs"
+      password: "YkxGs-c23Mx-F99op-WtQB9"
     register: openshift_auth_results
         # Previous task provides the token/api_key, while all other parameters
         # are taken from module_defaults
