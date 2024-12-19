@@ -17,6 +17,7 @@
       host: https://api.ocpkobil.konsalt.info:6443
       api_key: "{{ openshift_auth_results.openshift_auth.api_key }}"
       kind: Pod
+      namespace: bgd
       validate_certs: false
     register: pod_list
     #always:
