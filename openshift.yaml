@@ -1,7 +1,7 @@
 ---
 - name: Login to OpenShift and execute Bash script
   hosts: localhost
-  gather_fact: false
+  gather_facts: false
   
   tasks:
   - name: Log in (obtain access token)
