@@ -8,3 +8,4 @@
         host: https://api.ocpkobil.konsalt.info:6443
         kind: Pod
         namespace: bgd
+      register: pod_list
