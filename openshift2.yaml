@@ -3,8 +3,8 @@
   hosts: localhost
   gather_facts: no
   vars:
-    k8s_endpoint: "{{ lookup('env', 'K8S_API_ENDPOINT') }}"  # Credential'dan gelen API endpoint
-    k8s_token: "{{ lookup('env', 'K8S_API_TOKEN') }}"        # Credential'dan gelen token
+    k8s_endpoint: "{{ lookup('env', 'host') }}"  # Credential'dan gelen API endpoint
+    k8s_token: "{{ lookup('env', 'bearer-token') }}"        # Credential'dan gelen token
   tasks:
     - name: Debug API Endpoint and Token
       debug:
@@ -27,7 +27,7 @@
       ansible.builtin.shell: |
         #!/bin/bash
         echo "Running a Bash script on OpenShift cluster"
-        oc get nodes
+        oc --help
       args:
         executable: /bin/bash
       register: script_output
