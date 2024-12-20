@@ -8,7 +8,6 @@
   tasks:
     - name: Debug API Endpoint and Token
       debug:
-        var: ansible_env
         msg:
           - "API Endpoint: {{ k8s_endpoint }}"
           - "Bearer Token: {{ k8s_token }}"
