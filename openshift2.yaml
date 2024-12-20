@@ -22,3 +22,12 @@
         kind: Pod
         namespace: bgd
       register: pod_list
+
+    - name: Run a Bash script
+      ansible.builtin.shell: |
+        #!/bin/bash
+        echo "Running a Bash script on OpenShift cluster"
+        oc get nodes
+      args:
+        executable: /bin/bash
+      register: script_output
