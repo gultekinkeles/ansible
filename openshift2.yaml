@@ -5,7 +5,8 @@
     - name: List Pods
       kubernetes.core.k8s_info:
         api_key: sha256~o67JJiZskpNh5X_e-iJnpXIS3UEkqB6rJ3KTjsvbomE
-        host: https://api.ocpkobil.konsalt.info:6443
+        #host: https://api.ocpkobil.konsalt.info:6443
+        host: "{{ ocp-kobil-kubeadmin.host }}"
         kind: Pod
         namespace: bgd
       register: pod_list
