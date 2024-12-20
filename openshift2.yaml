@@ -1,6 +1,8 @@
 ---
 - name: Use OpenShift or Kubernetes API Bearer Token
   hosts: localhost
+  debug:
+    var: ansible_env
   gather_facts: no
   vars:
     k8s_endpoint: "{{ lookup('env', 'host') }}"  # Credential'dan gelen API endpoint
