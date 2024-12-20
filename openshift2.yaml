@@ -16,7 +16,7 @@
   tasks:
     - name: List Pods
       kubernetes.core.k8s_info:
-        api_key: sha256~o67JJiZskpNh5X_e-iJnpXIS3UEkqB6rJ3KTjsvbomE
+        api_key: sha256~ErGi8pZzgpNLmPl0hZqz_U2auwe4pcTK4idlzdrcL3E
         host: https://api.ocpkobil.konsalt.info:6443
         #host: "{{ ocp-kobil-kubeadmin.host }}"
         kind: Pod
