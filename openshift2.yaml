@@ -1,0 +1,24 @@
+---
+- name: Login to OpenShift and execute Bash script
+  hosts: localhost
+  gather_facts: false
+  
+  tasks:
+  - name: Log in (obtain access token)
+    redhat.openshift.openshift_auth:
+      host: https://api.ocpkobil.konsalt.info:6443
+      username: kubeadmin
+      api_key: sha256~o67JJiZskpNh5X_e-iJnpXIS3UEkqB6rJ3KTjsvbomE
+      validate_certs: false
+    register: openshift_auth_results
+        # Previous task provides the token/api_key, while all other parameters
+        # are taken from module_defaults
+  - name: Get a list of all pods from any namespace
+    kubernetes.core.k8s_info:
+      host: https://api.ocpkobil.konsalt.info:6443
+      api_key: "{{ openshift_auth_results.openshift_auth.api_key }}"
+      kind: Pod
+      namespace: bgd
+      validate_certs: false
+    register: pod_list
+    #always:
