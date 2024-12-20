@@ -1,12 +1,24 @@
 ---
+- name: Use OpenShift or Kubernetes API Bearer Token
+  hosts: localhost
+  gather_facts: no
+  vars:
+    k8s_endpoint: "{{ lookup('env', 'K8S_API_ENDPOINT') }}"  # Credential'dan gelen API endpoint
+    k8s_token: "{{ lookup('env', 'K8S_API_TOKEN') }}"        # Credential'dan gelen token
+  tasks:
+    - name: Debug API Endpoint and Token
+      debug:
+        msg:
+          - "API Endpoint: {{ k8s_endpoint }}"
+          - "Bearer Token: {{ k8s_token }}"
 - name: Manage OpenShift Resources with Token
   hosts: localhost
   tasks:
     - name: List Pods
       kubernetes.core.k8s_info:
         api_key: sha256~o67JJiZskpNh5X_e-iJnpXIS3UEkqB6rJ3KTjsvbomE
-        #host: https://api.ocpkobil.konsalt.info:6443
-        host: "{{ ocp-kobil-kubeadmin.host }}"
+        host: https://api.ocpkobil.konsalt.info:6443
+        #host: "{{ ocp-kobil-kubeadmin.host }}"
         kind: Pod
         namespace: bgd
       register: pod_list
