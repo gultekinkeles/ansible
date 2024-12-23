@@ -8,7 +8,7 @@
     redhat.openshift.openshift_auth:
       host: https://api.ocpkobil.konsalt.info:6443
       username: kubeadmin
-      #password: "YkxGs-c23Mx-F99op-WtQB9"
+      password: "YkxGs-c23Mx-F99op-WtQB9"
       validate_certs: false
     register: openshift_auth_results
         # Previous task provides the token/api_key, while all other parameters
