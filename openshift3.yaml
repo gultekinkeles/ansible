@@ -5,5 +5,5 @@
     - name: Print Kubernetes Host and Token
       debug:
         msg:
-          - "Kubernetes Host: {{ lookup('env', 'K8S_AUTH_API_URL') }}"
-          - "Bearer Token: {{ lookup('env', 'K8S_AUTH_TOKEN') }}"
+          - "Kubernetes Host: {{ lookup('env', 'host') }}"
+          - "Bearer Token: {{ lookup('env', 'bearer-token') }}"
