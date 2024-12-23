@@ -1,9 +1,7 @@
 ---
-- name: Access OpenShift API
-  hosts: localhost
-  tasks:
-    - name: Print Kubernetes Host and Token
-      debug:
-        msg:
-          - "Kubernetes Host: {{ lookup('env', 'host') }}"
-          - "Bearer Token: {{ lookup('env', 'bearer-token') }}"
+- name: Kubernetes API connection
+  k8s_info:
+    api_key: "{{ lookup('env', 'K8S_AUTH_TOKEN') }}"
+    host: "{{ lookup('env', 'K8S_AUTH_API_URL') }}"
+    validate_certs: no
+  register: k8s_response
